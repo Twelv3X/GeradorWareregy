@@ -1,4 +1,5 @@
 Gerador Wareregy
+https://geradorwr.000webhostapp.com/index.php
 
 O projeto Wareregy é uma aplicação móvel da cadeira de Programação para Dispositivos Móveis, e um dos objetivos desta aplicação é registar produtos numa base de dados mySQL através de um scan ao código QR. A aplicação então com os dados que estão na base de dados irá mostrar vários gráficos que indicaram o progresso do utilizador com o número de registos por hora num determinado intervalo de tempo.
 
