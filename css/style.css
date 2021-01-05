@@ -1,0 +1,17 @@
+/* CSS */
+
+  .navbar{
+    background: linear-gradient(to left, #614385, #516395);
+  }
+
+  body {
+    background: #007bff;
+    background: linear-gradient(to right, #614385, #516395);
+  }
+  
+  .contentor {
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+    
+  }
