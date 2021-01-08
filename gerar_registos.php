@@ -23,16 +23,16 @@ include "navbar.php";
     <div class="col-md-4 contentor bg-light py-4 mt-4">
         <form class="container-fluid" action="gerar_registos.php" method="POST">
 
-            <div class="row mb-3 justify-content-center">
-                <div class="col-md-10">
-                <h2 class="text-center mb-4">Gerar Registos</h2>
+            <div class="row mb-2 justify-content-center">
+                <div class="col-md-12">
+                <h2 class="text-center mb-3">Gerar Registos</h2>
                     <label class="form-label" for="nEntradas">Quantidade de Registos</label>
                     <input required class="form-control" type="number" name="nEntradas" value="<?=$nEntradas;?>">
                 </div>
             </div>
            
-            <div class="row mb-3 justify-content-center">
-                <div class="col-md-10">
+            <div class="row mb-2 justify-content-center">
+                <div class="col-md-12">
                     <label class="form-label" for="">Intervalo das Datas</label>
                     <div class="row">
                         <div class="col-md-6">
@@ -45,8 +45,8 @@ include "navbar.php";
                 </div>
             </div>
             
-            <div class="row mb-3 justify-content-center">
-                <div class="col-md-10">
+            <div class="row mb-2 justify-content-center">
+                <div class="col-md-12">
                     <label class="form-label" for="">Intervalo do Tempo</label>
                     <div class="row">
                         <div class="col-md-6">
@@ -59,15 +59,15 @@ include "navbar.php";
                 </div>
             </div>
 
-            <div class="row mb-3 justify-content-center">
-                <div class="col-md-10">
+            <div class="row mb-2 justify-content-center">
+                <div class="col-md-12">
                     <label class="form-label" >Id do utilizador</label>
                     <input class="form-control" type="number" name="idUtilizador" value="<?=$idUtilizador;?>">
                 </div>
             </div>
 
-            <div class="row mb-3 justify-content-center">
-                <div class="col-md-10">
+            <div class="row mb-2 justify-content-center">
+                <div class="col-md-12">
                     <label class="form-label" >Número de Produtos</label>
                     <input class="form-control" type="number" name="nIdProdutos" value="<?=$nIdProdutos;?>">
                 </div>

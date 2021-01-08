@@ -28,8 +28,8 @@ if(isset($_POST["Generate"])){
                 " Peso: " . $pPeso .
                 " Localização: " . $pLoc . "'";   
 
-        $sqlString = "INSERT INTO registos
-        VALUES ('', " . $pNome . ", " . $pPeso . ", " . $pLoc . ", " . $qr ."); 
+        $sqlString = "INSERT INTO produtos
+        VALUES ('', '" . $pNome . "', " . $pPeso . ", '" . $pLoc . "', " . $qr ."); 
         <br>";
         
         array_push($sql, $sqlString);

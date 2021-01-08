@@ -2,8 +2,16 @@
   --input-padding-x: 1.5rem;
   --input-padding-y: .75rem;
 }
-.container{
-    margin-top: 200px;
+html, 
+body {
+    height: 100%;
+}
+.centro{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 body {
   background: #007bff;

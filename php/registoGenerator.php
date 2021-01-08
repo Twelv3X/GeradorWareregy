@@ -28,8 +28,7 @@ function randomTime($start_time, $end_time){
     $t1 = paraSegundos($start_time);
     $t2 = paraSegundos($end_time);
     $segundos = mt_rand($t1, $t2);
-    $t = paraHMS($segundos);
-    return $t;
+    return $segundos;
 }
 
 
@@ -38,10 +37,11 @@ if(isset($_POST["Generate"])){
     for ($i=0; $i < $nEntradas; $i++) {
         
         $rData = randomDate($data1, $data2);
-        $rTempo = randomTime($tempo1, $tempo2);
+        $sTempo = randomTime($tempo1, $tempo2);
+        $rTempo = paraHMS($sTempo);
         $idProduto = mt_rand(1,$nIdProdutos);
-        $sqlString = "INSERT INTO registos
-        VALUES ('', " . $idUtilizador . ", " . $idProduto . ", " . $rData . ", " . $rTempo ."); 
+        $sqlString = "INSERT INTO produtos_registados
+        VALUES ('', " . $idUtilizador . ", " . $idProduto . ", STR_TO_DATE('" . $rData ."', '%d-%m-%Y'), " . $sTempo ."); 
         <br>";
 
         array_push($sql, $sqlString);

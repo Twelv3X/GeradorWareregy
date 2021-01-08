@@ -23,15 +23,15 @@ include "navbar.php";
     <div class="col-md-4 contentor bg-light py-4 mt-4">
         <form class="container-fluid" action="gerar_produtos.php" method="POST">
 
-            <div class="row mb-3 justify-content-center">
-                <div class="col-md-10">
-                <h2 class="text-center mb-4">Gerar Produtos</h2>
+            <div class="row mb-2 justify-content-center">
+                <div class="col-md-12">
+                <h2 class="text-center mb-3">Gerar Produtos</h2>
                     <label class="form-label" for="nEntradas">Quantidade de Produtos</label>
                     <input required class="form-control" type="number" name="nEntradas" value="<?=$nEntradas;?>">
                 </div>
             </div>
-            <div class="row mb-3 justify-content-center">        
-                <div class="col-md-10">
+            <div class="row mb-2 justify-content-center">        
+                <div class="col-md-12">
                     <label class="form-label" for="">Nomes possíveis dos produtos</label>
                     <div class="input-group">
                         <input class="form-control" type="text" name="nomeProduto">
@@ -42,8 +42,8 @@ include "navbar.php";
                 </div>
             </div>
 
-            <div class="row mb-3 justify-content-center">
-                <div class="col-md-10">
+            <div class="row mb-2 justify-content-center">
+                <div class="col-md-12">
                     <label class="form-label" for="">Intervalo do Peso</label>
                     <div class="row">
                         <div class="col-md-6">
@@ -56,8 +56,8 @@ include "navbar.php";
                 </div>
             </div>
 
-            <div class="row mb-3 justify-content-center">        
-                <div class="col-md-10">
+            <div class="row mb-2 justify-content-center">        
+                <div class="col-md-12">
                     <label class="form-label" for="">Localizações possíveis dos produtos</label>
                     <div class="input-group">
                         <input class="form-control" type="text" name="locProduto">
