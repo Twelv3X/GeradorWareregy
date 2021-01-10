@@ -1,3 +1,12 @@
+<?php
+session_start();
+include "php/autenticar.php";
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+  header("location: gerar_produtos.php");
+  exit;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,27 +18,31 @@
     <!-- CSS -->
     <link href="css/login.css" rel="stylesheet">
 </head>
-
 <body>
-<div class="container centro">
-      <div class="row m-0 ">
-        <div class="col-md-6 offset-md-4">
-          <div class="card card-signin col-md-10 offset-md-1">
+<div class="container-fluid centro">
+      <div class="row m-0 justify-content-center">
+        <div class="col-md-4">
+          <div class="card card-signin">
             <div class="card-body">
               <h5 class="card-title text-center">Sign In</h5>
-              <form class="form-signin" method="POST" action="">
-                <div class="form-label-group">
+              <form class="form-signin" method="POST" action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                <div class="form-label-group mb-2">
                   <input type="email" name="useremail" class="form-control" placeholder="Email address" required autofocus>
                 </div>
   
-                <div class="form-label-group">
+                <div class="form-label-group mb-2">
                   <input type="password" name="userpassword" class="form-control" placeholder="Password" required>
                 </div>
                 
                 <div class="custom-control custom-checkbox mb-3">
-                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <input type="checkbox" name="lembrar" value="1" class="custom-control-input" id="customCheck1">
                   <label class="custom-control-label" for="customCheck1">Remember password</label>
                 </div>
+                <?php if(isset($erro)){ ?>
+                <div class="alert alert-danger" role="alert">
+                  <?=$erro;?>
+                </div>
+                <?php } ?>
                 <button class="btn btn-lg btn-dark btn-block text-uppercase " type="submit">Sign in</button>
               </form>
             </div>
