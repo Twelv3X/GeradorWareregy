@@ -1,10 +1,27 @@
 <?php
-session_start();
-include "php/autenticar.php";
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-  header("location: gerar_produtos.php");
-  exit;
+if(isset($_POST["logout"])){
+  $hour = time() - 3600 *24 * 30;
+  setcookie("userid", "", $hour, "/");
+  setcookie("username", "", $hour);
+  setcookie("active", "", $hour);
+  session_start();
+  session_destroy();
 }
+session_start();
+
+if(isset($_COOKIE["username"])) $user = $_COOKIE["username"];
+if (isset($_SESSION["name"])) $user = $_SESSION["name"];
+
+if (isset($user)) {
+	header('Location: gerar_produtos.php');
+	exit;
+}
+
+print_r($_COOKIE);
+
+include "php/autenticar.php";
+
+
 
 ?>
 <!DOCTYPE html>
@@ -35,7 +52,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                 </div>
                 
                 <div class="custom-control custom-checkbox mb-3">
-                  <input type="checkbox" name="lembrar" value="1" class="custom-control-input" id="customCheck1">
+                  <input type="checkbox" name="lembrar" class="custom-control-input" id="customCheck1">
                   <label class="custom-control-label" for="customCheck1">Remember password</label>
                 </div>
                 <?php if(isset($erro)){ ?>

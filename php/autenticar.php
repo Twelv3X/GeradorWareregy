@@ -18,10 +18,15 @@ if (isset($_POST['useremail'], $_POST['userpassword']) ) {
                 $_SESSION['name'] = $nome;
                 $_SESSION['id'] = $id;
 
-                if($_POST["lembrar"] == "1"){
+                if( ($_POST["lembrar"]==1) || ($_POST["lembrar"]=="on")) {
+                    $hour = time()+3600 *24 * 30;
+                    setcookie("userid", $id, $hour);
+                    setcookie("username", $nome, $hour);
+                    }
 
                     
                 }
+                
                 header('Location: gerar_produtos.php');
             } else {
                 $erro = "Palavra-passe incorreta";
@@ -32,6 +37,6 @@ if (isset($_POST['useremail'], $_POST['userpassword']) ) {
     
         $stmt->close();
     }
-}
+
 
 ?>

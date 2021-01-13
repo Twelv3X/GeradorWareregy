@@ -17,10 +17,10 @@
         </li>
       </ul>
       <span class="float-end mx-4 text-white">
-      <?=$_SESSION['name'];?>
+      <?=$user;?>
     </span>
-      <form class="float-end" action="php/logout.php">
-      <input type="submit" class="btn btn-dark text-white" value="Logout" >
+      <form class="float-end" name="" method="POST" action="index.php">
+      <input type="submit" name="logout" class="btn btn-dark text-white" value="logout" >
     </form>
     </div>
   </div>
