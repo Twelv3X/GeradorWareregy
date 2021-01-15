@@ -17,8 +17,6 @@ if (isset($user)) {
 	exit;
 }
 
-print_r($_COOKIE);
-
 include "php/autenticar.php";
 
 

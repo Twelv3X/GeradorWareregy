@@ -23,14 +23,13 @@ if(isset($_POST["Generate"])){
         $pNome = getRandNome($nomes,$nEntradas);
         $pPeso = getRandPeso($peso1, $peso2);
         $pLoc = getRandLoc($locs,$nEntradas);
-        $qr = "'Id: ". $i .
-                " Nome: " . $pNome .
-                " Peso: " . $pPeso .
-                " Localização: " . $pLoc . "'";   
+        $qr = '"Id: '. $i .
+                ' Nome: ' . $pNome .
+                ' Peso: ' . $pPeso .
+                ' Localização: ' . $pLoc . '"';   
 
-        $sqlString = "INSERT INTO produtos
-        VALUES ('', '" . $pNome . "', " . $pPeso . ", '" . $pLoc . "', " . $qr ."); 
-        <br>";
+        $sqlString = 'INSERT INTO produtos
+        VALUES ("", "' . $pNome . '", ' . $pPeso . ', "' . $pLoc . '", ' . $qr .');';
         
         array_push($sql, $sqlString);
 

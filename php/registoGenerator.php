@@ -40,9 +40,8 @@ if(isset($_POST["Generate"])){
         $sTempo = randomTime($tempo1, $tempo2);
         $rTempo = paraHMS($sTempo);
         $idProduto = mt_rand(1,$nIdProdutos);
-        $sqlString = "INSERT INTO produtos_registados
-        VALUES ('', " . $idUtilizador . ", " . $idProduto . ", STR_TO_DATE('" . $rData ."', '%d-%m-%Y'), " . $sTempo ."); 
-        <br>";
+        $sqlString = 'INSERT INTO produtos_registados
+        VALUES ("", ' . $idUtilizador . ', ' . $idProduto . ', STR_TO_DATE("' . $rData .'", "%d-%m-%Y"), ' . $sTempo .');';
 
         array_push($sql, $sqlString);
 

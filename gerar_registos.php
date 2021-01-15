@@ -23,12 +23,13 @@ if (!isset($user)) {
 <body>
 <header>
 <?php
+include  "php/queries.php";
 include "php/variaveis.php";
 include "navbar.php";
 ?>
 </header>
     
-<div class="row mx-4">
+<div class="row mx-4 justify-content-center">
     <div class="col-md-4 contentor bg-light py-4 mt-4">
         <form class="container-fluid" action="gerar_registos.php" method="POST">
 
@@ -90,24 +91,41 @@ include "navbar.php";
         </form>
     </div>
     <div class="col-md-6 offset-md-1 contentor bg-light py-4 mt-4">
-        <div class="row">
+        <div class="row"  style="max-height: 448px; height: 100%">
     <div class="col-md-6">
         <h2 class="text-center">Pré-visualizar</h2>
-        <div class="col-md-12 bg-white overflow-scroll" style="max-height: 448px;">
+        <div class="col-md-12 bg-white overflow-scroll" style="max-height: 388px; height: 100%;">
             <?php
                 include "php/registoGenerator.php";
             ?>
         </div>
     </div>
     <div class="col-md-6">
-        <h2 class="text-center">Código SQL</h2>
-        <div class="col-md-12 bg-white overflow-scroll" style="max-height: 448px;">
-            <?php
-               include "php/sqlGenerator.php";
-            ?>
+                <h2 class="text-center">Código SQL</h2>
+                <div class="col-md-12 bg-white overflow-scroll" style="max-height: 388px; height: 100%;">
+                    <?php
+                    if(isset($_POST["Enviar"])){
+                        echo "Enviado " . $i . " registos!";
+                    }
+                        include "php/sqlGenerator.php";
+                    ?>
+            </div>
+            <?php if(isset($_POST["Generate"])){?>
+                <div class="col-md-8 offset-md-2">
+                    <form method="POST" action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                        <div class="row">
+                            <?php foreach($sql as $key) { ?>
+                                <input type="hidden" name="sql[]" value='<?=$key?>'>
+                                
+                            <?php } ?>
+                            
+                            <input class="btn btn-dark mt-2" type="submit" name="Enviar" value="Enviar para a base de dados">
+                        </div>
+                    </form>
+                </div>
+            <?php } ?>
         </div>
     </div>
-</div>
 </div>
 </div>
 </body>
