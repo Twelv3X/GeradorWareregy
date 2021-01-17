@@ -13,7 +13,10 @@
           <a class="nav-link text-white" href="gerar_registos.php">Gerar Registos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Base de Dados</a>
+          <a class="nav-link text-white" href="consultar.php">Consultar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="estatisticas.php">Estatísticas</a>
         </li>
       </ul>
       <span class="float-end mx-4 text-white">
