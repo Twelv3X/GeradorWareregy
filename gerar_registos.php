@@ -28,7 +28,7 @@ include "php/variaveis.php";
 include "navbar.php";
 ?>
 </header>
-    
+<div class="container-fluid">
 <div class="row mx-4 justify-content-center">
     <div class="col-md-4 contentor bg-light py-4 mt-4">
         <form class="container-fluid" action="gerar_registos.php" method="POST">
@@ -126,6 +126,7 @@ include "navbar.php";
             <?php } ?>
         </div>
     </div>
+</div>
 </div>
 </div>
 </body>

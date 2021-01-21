@@ -31,7 +31,7 @@ include "navbar.php";
     <div class="row justify-content-center">
         <div class="col-md-6 contentor bg-light p-4 mt-4">
             <h2 class="mb-4">Consultar</h2>
-        <table id="example" class="table table-striped" style="width:100%">
+        <table id="example" class="table" style="width:100%">
         <thead>
             <tr>
                 <th>Id</th>
