@@ -112,7 +112,7 @@ include "navbar.php";
             </div>
             <?php if(isset($_POST["Generate"])){?>
                 <div class="col-md-8 offset-md-2">
-                    <form method="POST" action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                    <form method="POST" action="gerar_registos.php">
                         <div class="row">
                             <?php foreach($sql as $key) { ?>
                                 <input type="hidden" name="sql[]" value='<?=$key?>'>

@@ -1,4 +1,5 @@
 <?php
+//Limpar as cookies e acabar a session depois de fazer logout
 if(isset($_POST["logout"])){
   $hour = time() - 3600 *24 * 30;
   setcookie("userid", "", $hour, "/");
@@ -12,15 +13,13 @@ session_start();
 if(isset($_COOKIE["username"])) $user = $_COOKIE["username"];
 if (isset($_SESSION["name"])) $user = $_SESSION["name"];
 
+//Se o utilizador já tiver uma sessão ativa, ele irá ser dirigido á página inicial
 if (isset($user)) {
 	header('Location: gerar_produtos.php');
 	exit;
 }
 
 include "php/autenticar.php";
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,11 +43,9 @@ include "php/autenticar.php";
                 <div class="form-label-group mb-2">
                   <input type="email" name="useremail" class="form-control" placeholder="Email" required>
                 </div>
-  
                 <div class="form-label-group mb-2">
                   <input type="password" name="userpassword" class="form-control" placeholder="Password" required>
                 </div>
-                
                 <div class="custom-control custom-checkbox mb-3">
                   <input type="checkbox" name="lembrar" class="custom-control-input" id="customCheck1">
                   <label class="custom-control-label" for="customCheck1">Lembrar palavra-passe</label>

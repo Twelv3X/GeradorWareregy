@@ -1,4 +1,8 @@
 <?php
+//Guarda os POSTS em variavéis
+
+//--//
+//Estas linhas vão guardar na session os nomes e as localizações inseridas e guardálas num array
 if(!isset($_SESSION["nomeProds"])){
     $_SESSION["nomeProds"] = array();
 }
@@ -32,11 +36,8 @@ if(isset($_POST["removeLoc"]))
 {
     $_SESSION["locProds"] = array();
 }
+// -- //
 
-if(isset($_POST["Generate"]))
-{
-     
-}
 
 if(isset($_POST["nEntradas"]))
 {
@@ -108,6 +109,5 @@ if(isset($_POST["idUtilizador"]))
 if(!isset($sql)){
 $sql = array();
 }
-
 
 ?>

@@ -20,7 +20,6 @@ if (!isset($user)) {
     <link href="css/style.css" rel="stylesheet">
     <title>Document</title>
 </head>
-
 <body>
 <header>
 <?php
@@ -43,6 +42,7 @@ include "navbar.php";
             </tr>
         </thead>
         <tbody>
+        <!-- Preencher a tabela com registos -->
         <?php include "php/datatable.php"; ?>
         </tbody>
         </table>
@@ -51,7 +51,11 @@ include "navbar.php";
     
 </div>
 </body>
-
+<!-- 
+Como existem milhares de registos, a página iria ficar com um scroll enorme,
+para prevenir isso usei um plugin de jQuery chamado DataTables.
+Este plugin vai paginar a tabela e vai também incluir um form de search no topo da tabela
+-->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.js"></script>

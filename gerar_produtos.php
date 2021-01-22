@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+//Mandar o utilizador para a página do login se uma sessão não existir
 if(isset($_COOKIE["username"])) $user = $_COOKIE["username"];
 if (isset($_SESSION["name"])) $user = $_SESSION["name"];
 
@@ -31,7 +31,6 @@ include "navbar.php";
 <div class="row mx-4 justify-content-center">
     <div class="col-md-4 contentor bg-light py-4 mt-4">
         <form class="container-fluid" action="gerar_produtos.php" method="POST">
-
             <div class="row mb-2 justify-content-center">
                 <div class="col-md-12">
                 <h2 class="text-center mb-3">Gerar Produtos</h2>
@@ -50,7 +49,6 @@ include "navbar.php";
                     <div class="form-text"><?= "Número de Nomes: " . count($_SESSION["nomeProds"]) ?></div>
                 </div>
             </div>
-
             <div class="row mb-2 justify-content-center">
                 <div class="col-md-12">
                     <label class="form-label" for="">Intervalo do Peso</label>
@@ -64,7 +62,6 @@ include "navbar.php";
                     </div>
                 </div>
             </div>
-
             <div class="row mb-2 justify-content-center">        
                 <div class="col-md-12">
                     <label class="form-label" for="">Localizações possíveis dos produtos</label>
@@ -76,7 +73,6 @@ include "navbar.php";
                     <div class="form-text"><?= "Número de localizações: " . count($_SESSION["locProds"]) ?></div>
                 </div>
             </div>
-
             <div class="col-md-8 offset-md-2">
                 <div class="row">
                     <input class="btn btn-dark" type="submit" name="Generate" value="Generate">
@@ -106,13 +102,11 @@ include "navbar.php";
             </div>
             <?php if(isset($_POST["Generate"])){?>
                 <div class="col-md-8 offset-md-2">
-                    <form method="POST" action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                    <form method="POST" action="gerar_produtos.php">
                         <div class="row">
                             <?php foreach($sql as $key) { ?>
                                 <input type="hidden" name="sql[]" value='<?=$key?>'>
-                                
                             <?php } ?>
-                            
                             <input class="btn btn-dark mt-2" type="submit" name="Enviar" value="Enviar para a base de dados">
                         </div>
                     </form>

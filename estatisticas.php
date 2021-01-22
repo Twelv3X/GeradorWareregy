@@ -29,26 +29,22 @@ include "navbar.php";
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-6 contentor bg-light p-4 mt-4">
-       
             <form class="mb-4" method="POST" action="estatisticas.php" >
                 <div class="row">
                     <div class="col-md-4">
                         <h2 style="display: inline-block;">Estatísticas</h2>
                     </div>
-                    
                         <div class="col-md-4 offset-md-2">
                             <input class="form-control" type="week" name="semana" id="">
                         </div>
                         <div class="col-md-2">
                             <input class="btn btn-dark" type="submit" name="graf" value="Procurar">
                         </div>
-                   
                 </div>
             </form> 
             <div class="" id="top_x_div" style="width: 100%; height: 600px;">
         </div>
     </div>
-    
 </div>
 </body>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -59,6 +55,7 @@ google.charts.setOnLoadCallback(drawStuff);
 function drawStuff() {
 var data = new google.visualization.arrayToDataTable([
     ['Data', 'n Registos'],
+    //Carregar dados da base de dados. Esta variável vem das queries.php
     <?php echo $entrada ?>
 ]);
 
@@ -69,7 +66,7 @@ var options = {
     subtitle: '' },
     axes: {
     x: {
-        0: { side: 'top', label: ''} // Top x-axis.
+        0: { side: 'top', label: ''} 
     }
     },
     bar: { groupWidth: "90%" }
